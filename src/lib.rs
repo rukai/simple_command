@@ -1,15 +1,15 @@
-/// When writing a `build.rs` to run some commands you naturally want to see the output of these commands.
-/// This is however impossible because `build.rs` cannot display stdout or stderr.
-/// The next best option is to display the output when the command goes wrong for any reason.
-/// The `simple_command` function does exactly that, panicking if anything at all goes wrong and
-/// displaying the combined stderr and stdout.
-///
-/// Possible reasons for panicking include:
-/// *   No command specified
-/// *   Command does not exist
-/// *   Non-zero return value
-///
-/// DO NOT use this function in your actual application, you should be properly handling error cases!
+//! When writing a `build.rs` to run some commands you naturally want to see the output of these commands.
+//! This is however impossible because `build.rs` cannot display stdout or stderr.
+//! The next best option is to display the output when the command goes wrong for any reason.
+//! The `simple_command` function does exactly that, panicking if anything at all goes wrong and
+//! displaying the combined stderr and stdout.
+//!
+//! Possible reasons for panicking include:
+//! *   No command specified
+//! *   Command does not exist
+//! *   Non-zero return value
+//!
+//! DO NOT use this function in your actual application, you should be properly handling error cases!
 
 use std::process::{Command, Stdio};
 use std::io::{BufReader, BufRead, Write};

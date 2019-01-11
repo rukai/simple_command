@@ -25,3 +25,7 @@ fn main() {
     simple_command::simple_command("tree --foo");
 }
 ```
+
+## Documentation
+
+Refer to [docs.rs](https://docs.rs/simple_command) for the full, very small, API.
