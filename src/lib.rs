@@ -59,7 +59,7 @@ pub fn simple_command(cmd: &str) {
             stderr.consume(stderr_bytes);
         }
     }
-    let output = str::from_utf8(&output).unwrap();
+    let output = String::from_utf8_lossy(&output);
 
     let status = match child.wait() {
         Ok(status) => status,
